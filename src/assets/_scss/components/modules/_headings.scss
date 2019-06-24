@@ -1,0 +1,42 @@
+$moduleName: "heading";
+
+.#{$moduleName}-1 {
+  @extend %heading;
+  font-size: 30px;
+  margin-bottom: 0.7em;
+  @include g-state(tl) {
+    font-size: 36px;
+  }
+}
+
+.#{$moduleName}-2 {
+  @extend %heading;
+  font-size: 22px;
+  @include g-state(tl) {
+    font-size: 26px;
+  }
+}
+
+.#{$moduleName}-3 {
+  @extend %heading;
+  font-size: 18px;
+  @include g-state(tl) {
+    font-size: 20px;
+  }
+}
+
+.#{$moduleName}-4 {
+  @extend %heading;
+  font-size: 14px;
+  @include g-state(tl) {
+    font-size: 16px;
+  }
+}
+
+.#{$moduleName}-5 {
+  @extend %heading;
+  font-size: 12px;
+  @include g-state(tl) {
+    font-size: 14px;
+  }
+}

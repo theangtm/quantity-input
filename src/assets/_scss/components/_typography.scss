@@ -1,0 +1,25 @@
+%text {
+  font-family: $f-primary;
+  color: $c-text;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+%heading {
+  font-family: $f-primary;
+  color: $c-heading;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1em;
+}
+
+%small {
+  font-size: 10px;
+  @include g-state(tl) {
+    font-size: 11px;
+  }
+  @include g-state(d) {
+    font-size: 12px;
+  }
+}
