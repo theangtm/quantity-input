@@ -1,4 +1,3 @@
-//const quantityInput = $('.js-quantity');
 const quantityInput = '.js-quantity';
 const maxQuantity = 5;
 
