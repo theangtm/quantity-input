@@ -1,1 +1,52 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i,900,900i&display=swap');
+
+/* Apercu font */
+@font-face {
+font-family: 'Apercu';
+font-style: normal;
+font-weight: 100;
+src: local('Apercu Light'), url('../fonts/Apercu Light.woff') format('woff');
+}
+@font-face {
+font-family: 'Apercu';
+font-style: italic;
+font-weight: 100;
+src: local('Apercu Light Italic'), url('../fonts/Apercu Light Italic.woff') format('woff');
+}
+@font-face {
+font-family: 'Apercu';
+font-style: normal;
+font-weight: 400;
+src: local('Apercu Regular'), url('../fonts/Apercu_Regular.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Apercu';
+font-style: italic;
+font-weight: 400;
+src: local('Apercu Italic'), url('../fonts/Apercu Italic.woff') format('woff');
+}
+@font-face {
+font-family: 'Apercu';
+font-style: normal;
+font-weight: 600;
+src: local('Apercu Medium'), url('../fonts/Apercu Medium.woff') format('woff');
+}
+@font-face {
+font-family: 'Apercu';
+font-style: italic;
+font-weight: 600;
+src: local('Apercu Medium Italic'), url('../fonts/Apercu Medium Italic.woff') format('woff');
+}
+@font-face {
+font-family: 'Apercu';
+font-style: normal;
+font-weight: 800;
+src: local('Apercu Bold'), url('../fonts/Apercu Bold.woff') format('woff');
+}
+@font-face {
+font-family: 'Apercu';
+font-style: italic;
+font-weight: 800;
+src: local('Apercu Bold Italic'), url('../fonts/Apercu Bold Italic.woff') format('woff');
+}

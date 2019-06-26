@@ -1,0 +1,18 @@
+$moduleName: "button";
+
+.#{$moduleName} {
+  display: inline-block;
+  width: 25px;
+  line-height: 25px;
+  height: 25px;
+  padding: 0 5px;
+  border: 1px solid #00000054;
+  color: #00000054;
+  background: white;
+  ion-icon {
+    pointer-events: none;
+  }
+  &:focus {
+    outline-color: $c-pink;
+  }
+}

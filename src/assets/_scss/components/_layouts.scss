@@ -1,20 +1,20 @@
 @include g-setup((
 	columns: 12,
 	column-width: 60, // unitless value
-	width: 1200, // unitless value
-	container-width: 85vw, // absolute value
-	container-max-width: 1440px
+	width: 960, // unitless value
+	container-width: 90vw, // absolute value
+	container-max-width: 1200px
 ));
 
-@include g-register-state(tablet, (
+@include g-register-state(t, (
 	min-width : 640px
 ));
-@include g-register-state(desktop, (
-	min-width : 992px
+@include g-register-state(d, (
+	min-width : 1025px
 ));
 
-@include g-register-state (landscape, (
-	query : "(orientation : landscape)"
-));
+@include g-custom-class('center') {
+	text-align: center;
+}
 
 @include g-classes();

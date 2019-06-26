@@ -3,14 +3,14 @@
   color: $c-text;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.25;
+  line-height: 1;
 }
 
 %heading {
-  font-family: $f-primary;
+  font-family: $f-secondary;
   color: $c-heading;
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 800;
+  line-height: 1;
   margin-bottom: 1em;
 }
 

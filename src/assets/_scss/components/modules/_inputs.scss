@@ -1,0 +1,14 @@
+$moduleName: "input";
+
+.#{$moduleName} {
+  display: inline-block;
+  line-height: 25px;
+  height: 25px;
+  padding: 0 5px;
+  border: 1px solid #00000054;
+  color: black;
+}
+
+.#{$moduleName}--quantity {
+  width: calc(100% - 60px);
+}

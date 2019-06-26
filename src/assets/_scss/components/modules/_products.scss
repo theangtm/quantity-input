@@ -1,0 +1,37 @@
+$moduleName: "product";
+
+.#{$moduleName} {
+  background: $c-primary;
+  border-radius: 7px;
+  padding: 25px;
+  font-family: $f-secondary;
+}
+
+.#{$moduleName}-img {
+  background: $c-white;
+  ion-icon {
+    padding: 20px;
+    color: $c-pink;
+  }
+  @include g-state(d) {
+    ion-icon {
+      padding: 25px;
+    }
+	}
+}
+
+.#{$moduleName}-content {
+  position: relative;
+  .#{$moduleName}-quantity {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.#{$moduleName}-quantity {
+  min-width: 90px;
+  max-width: 120px;
+  & > * {
+    vertical-align: middle
+  }
+}
