@@ -1,14 +1,15 @@
-const quantityInput = '.js-quantity';
-const maxQuantity = 5;
+// const quantityInput = '.js-quantity';
+// const maxQuantity = 5;
 
-console.log('Current product quantity is ' + $(quantityInput).val());
+const quantityInput = ['js-quantity', 'js-quantity-x'];
+const maxQuantity = [5, 8];
 
-function increaseQuantity(targetClass) {
-  let oldQuantity = parseInt(targetClass.siblings(quantityInput).val());
-  if (oldQuantity < parseInt(maxQuantity)) {
-    targetClass.siblings(quantityInput).val(oldQuantity + 1);
+function increaseQuantity(targetClass,i) {
+  let oldQuantity = parseInt(targetClass.siblings('.' + quantityInput[i]).val());
+  if (oldQuantity < parseInt(maxQuantity[i])) {
+    targetClass.siblings('.' + quantityInput[i]).val(oldQuantity + 1);
   } else {
-    alert('The maximum of products per basket is ' + maxQuantity);
+    alert('The maximum of products per basket is ' + maxQuantity[i]);
   }
 };
 
@@ -25,25 +26,35 @@ function handler($this) {
   let targetClass = $($this.target);
 
   if (targetClass.hasClass('js-increaseValue')) {
-    increaseQuantity(targetClass);
-    console.log('Current product quantity is ' + targetClass.siblings(quantityInput).val());
+    for (let i = 0; i < quantityInput.length; i++ ) {
+      if ($(targetClass.siblings(quantityInput)).hasClass(String(quantityInput[i]))) {
+        increaseQuantity(targetClass,i);
+        console.log('Current product quantity is ' + targetClass.siblings('.' + quantityInput[i]).val());
+        break;
+      }
+    }
   } else if (targetClass.hasClass('js-decreaseValue')) {
     decreaseQuantity(targetClass);
     console.log('Current product quantity is ' + targetClass.siblings(quantityInput).val());
-  } else if (targetClass.hasClass($(quantityInput).attr('class'))) {
-    if (parseInt(targetClass.val()) > 5) {
-      alert('The maximum of products per basket is ' + maxQuantity);
-      targetClass.val(maxQuantity);
-    } else if (parseInt(targetClass.val()) < 1) {
-      alert('Your basket must contain at least 1 item');
-      targetClass.val(1);
-    }
+  }
+  else {
+    for (let i = 0; i < quantityInput.length; i++ ) {
+      if ($(targetClass).hasClass(String(quantityInput[i]))) {
+        if (parseInt(targetClass.val()) > maxQuantity[i]) {
+          alert('The maximum of products per basket is ' + maxQuantity[i]);
+          targetClass.val(maxQuantity[i]);
+        } else if (parseInt(targetClass.val()) < 1) {
+          alert('Your basket must contain at least 1 item');
+          targetClass.val(1);
+        }
+        break;
+      }
+    };
     console.log('Current product quantity is ' + targetClass.val());
   }
-
 }
 
-$('body').on('click change', handler);
+$('body').on('click', handler);
 
 // verze ktera odchytava behem psani s debounce
 
@@ -56,14 +67,19 @@ $('body').on('click change', handler);
 //     }, time);
 //   };
 //
-// $('body').on('input', $(quantityInput), debounceEvent(function($this) {
+// $('body').on('input', debounceEvent(function($this) {
 //   let targetClass = $($this.target);
-//   console.log('input ' + targetClass.val());
-//   if (parseInt(targetClass.val()) > 5) {
-//     alert('The maximum of products per basket is ' + maxQuantity);
-//     targetClass.val(maxQuantity);
-//   } else if (parseInt(targetClass.val()) < 1) {
-//     alert('Your basket must contain at least 1 item');
-//     targetClass.val(1);
-//   }
+//   for (let i = 0; i < quantityInput.length; i++ ) {
+//     if ($(targetClass).hasClass(String(quantityInput[i]))) {
+//       if (parseInt(targetClass.val()) > maxQuantity[i]) {
+//         alert('The maximum of products per basket is ' + maxQuantity[i]);
+//         targetClass.val(maxQuantity[i]);
+//       } else if (parseInt(targetClass.val()) < 1) {
+//         alert('Your basket must contain at least 1 item');
+//         targetClass.val(1);
+//       }
+//       break;
+//     }
+//   };
+//   console.log('Current product quantity is ' + targetClass.val());
 // }, 300));
