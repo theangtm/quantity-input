@@ -54,7 +54,7 @@ function handler($this) {
   }
 }
 
-$('body').on('click', handler);
+$('body').on('click change', handler);
 
 // verze ktera odchytava behem psani s debounce
 
